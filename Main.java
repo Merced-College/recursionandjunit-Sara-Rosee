@@ -80,6 +80,22 @@ public class Main {
         return countSub(str.substring(1), sub);
     }
 
-
+    // Problem 5
+    // Given a string, return recursively a "cleaned" string where adjacent chars that are the same have been reduced to a single char.
+    // So "yyzzza" yields "yza". 
+    public static String cleaned(String str) {
+        // strings with just 0 or 1 character cannot have duplicate chars
+        if (str.length() <= 1) {
+            return str;
+        }
+        // If first and second chars are the same then skip the first one. If the current character is the same as the next character, 
+        // skip it entirely by calling the method on the substring starting at index 1
+        if (str.charAt(0) == str.charAt(1)) {
+            return cleaned(str.substring(1));
+        } else {
+            // Keep first char and clean the rest. Keep this character + whatever comes from the cleaned up rest of the string
+            return str.charAt(0) + cleaned(str.substring(1));
+        }
+    }
 
 }

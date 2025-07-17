@@ -105,8 +105,30 @@ public class RecursiveTests {
         assertEquals(1, Main.countSub("abcabcdefg", "abcabc"));
     }
     
+    // Problem 5
+    @Test
+    public void Clean1() {
+        assertEquals("yza", Main.cleaned("yyzzza"));
+    }
 
+    @Test
+    public void Clean2() {
+        assertEquals("abcd", Main.cleaned("abbbcdd"));
+    }
 
+    @Test
+    public void Clean3() {
+        assertEquals("Helo", Main.cleaned("Hello")); 
+    }
 
+    @Test
+    public void Clean4() {
+        assertEquals("a", Main.cleaned("aaaaa")); 
+    }
+
+    @Test
+    public void Clean5() {
+        assertEquals("", Main.cleaned("")); 
+    }
     
 }
